@@ -32,7 +32,7 @@ button:hover {
     background-color: #504e4e;
 }
 
-.operator, .equal {
+.operator,.square, .equal {
     background-color: #ff9a00;
     color: white;
 }
@@ -41,6 +41,7 @@ button:hover {
     background-color: #161313;
     color: white;
 }
+
 
 .clear {
     grid-column: span 2;

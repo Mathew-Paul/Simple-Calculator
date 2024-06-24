@@ -17,6 +17,21 @@ document.addEventListener('DOMContentLoaded', function () {
         updateDisplay();
     }
 
+    function square() {
+        let result;
+        // Check if there's a previous input (for squaring after operations)
+        if (prevInput !== '') {
+          result = operate(); // Call operate to perform squaring if previous input exists
+        } else {
+          const numberToSquare = parseFloat(currentInput);
+          result = numberToSquare * numberToSquare;
+        }
+        currentInput = result.toString();
+        prevInput = '';
+        operator = '';
+        updateDisplay();
+    }
+    
     function operate() {
         let result;
         const num1 = parseFloat(prevInput);
@@ -87,6 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentInput += '.';
                 updateDisplay();
             }
+        } else if (target.classList.contains('square')) { // New button for squaring
+            square();
         }
     });
 
